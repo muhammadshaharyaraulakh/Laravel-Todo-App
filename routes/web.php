@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 
 Route::get('/', function () {
-    return redirect()->route(auth()->check() ? 'dashboard' : 'login');
+    return redirect()->route(auth()->check() ? 'dashboard' : 'register');
 });
 
 
