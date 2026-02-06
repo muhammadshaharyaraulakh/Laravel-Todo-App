@@ -8,13 +8,9 @@
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
-
-                <!-- Edit Task Form -->
                 <form method="POST" action="{{ route('tasks.update', $task->id) }}">
                     @csrf
-                    @method('PUT') <!-- Use PUT for updating -->
-
-                    <!-- Task Title -->
+                    @method('PUT') 
                     <div class="mb-4">
                         <x-input-label for="title" :value="__('task')" />
                         <x-text-input 
@@ -28,7 +24,6 @@
                         <x-input-error :messages="$errors->get('task')" class="mt-2" />
                     </div>
 
-                    <!-- Task Description -->
                     <div class="mb-4">
                         <x-input-label for="description" :value="__('Description')" />
                         <textarea 
@@ -40,8 +35,6 @@
                         >{{ old('description', $task->description) }}</textarea>
                         <x-input-error :messages="$errors->get('description')" class="mt-2" />
                     </div>
-
-                    <!-- Submit Button -->
                     <div class="flex items-center justify-end mt-4">
                         <x-primary-button>
                             {{ __('Update Task') }}

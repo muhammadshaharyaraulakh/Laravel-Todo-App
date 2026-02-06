@@ -12,14 +12,12 @@
                 <form method="POST" action="{{ route('tasks.store') }}">
                     @csrf
 
-                    <!-- Task Title -->
                     <div class="mb-4">
                         <x-input-label for="title" :value="__('Task Title')" />
                         <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')"  />
                         <x-input-error :messages="$errors->get('title')" class="mt-2" />
                     </div>
 
-                    <!-- Task Description -->
                     <div class="mb-4">
                         <x-input-label for="description" :value="__('Description')" />
                         <textarea id="description" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 dark:border-gray-700 dark:bg-gray-900 focus:border-indigo-500 focus:ring-indigo-500 dark:focus:border-indigo-500 dark:focus:ring-indigo-500" name="description" rows="4" >{{ old('description') }}</textarea>
