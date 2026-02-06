@@ -12,7 +12,7 @@
                 <!-- Edit Task Form -->
                 <form method="POST" action="{{ route('tasks.update', $task->id) }}">
                     @csrf
-                    @method('PATCH') <!-- Use PATCH for updating -->
+                    @method('PUT') <!-- Use PUT for updating -->
 
                     <!-- Task Title -->
                     <div class="mb-4">
